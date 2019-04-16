@@ -289,6 +289,34 @@ for student in matrix[6]:
 student_grades = [] #ONLY GRADES for the logged in student
 for i in range(7,len(weights)+7):
   student_grades.append(int(matrix[i][j]))
+  
+grade1 = []
+for i in range(len(matrix[6])):
+  grade1.append(matrix[7][i])
+
+grade2 = []
+
+for i in range(len(matrix[6])):
+  grade2.append(matrix[8][i])
+
+grade3 = []
+
+for i in range(len(matrix[6])):
+  grade3.append(matrix[9][i])
+
+grade4 = []
+
+for i in range(len(matrix[6])):
+  grade4.append(matrix[10][i])
+grade5 = []
+
+for i in range(len(matrix[6])):
+  grade5.append(matrix[11][i])
+
+grade6 = []
+
+for i in range(len(matrix[6])):
+  grade6.append(matrix[12][i])
 
 #finds final grade for logged in student
 selected_grade = calculate_final_grade(student_grades,weights) #final grade for the selected student
