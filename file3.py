@@ -95,11 +95,11 @@ class Page2(tk.Frame):
         f = histogram(grades1)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
-        canvas1.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
-        g = pie_chart()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades1)
         canvas2 = FigureCanvasTkAgg(g, self)
         canvas2.draw()
-        canvas2.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 
 class Page3(tk.Frame):
@@ -115,12 +115,13 @@ class Page3(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
         button3.pack()
         f = histogram(grades2)
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades2)
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 
 class Page4(tk.Frame):
@@ -137,13 +138,13 @@ class Page4(tk.Frame):
         button3.pack()
 
         f = histogram(grades3)
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades3)
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 class Page5(tk.Frame):
     def __init__(self, parent, controller):
@@ -159,12 +160,13 @@ class Page5(tk.Frame):
         button3.pack()
 
         f = histogram(grades4)
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades4)
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 
 class Page6(tk.Frame):
@@ -180,14 +182,14 @@ class Page6(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
         button3.pack()
 
-        f = histogram(grades5)
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
+f = histogram(grades5)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades5)
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 class Page7(tk.Frame):
     def __init__(self, parent, controller):
@@ -201,12 +203,13 @@ class Page7(tk.Frame):
         button2.pack()
 
         f = histogram(grades6)
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
+        g = whisker_plot(grades6)
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH)
 
 
 # calculates final grade given a list of grades for one student
