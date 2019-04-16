@@ -143,7 +143,6 @@ class Page4(tk.Frame):
       #toolbar.update()
       canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-
 class Page5(tk.Frame):
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
@@ -164,7 +163,6 @@ class Page5(tk.Frame):
        #toolbar = NavigationToolbar2TkAgg(canvas, self)
        #toolbar.update()
        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
 
 class Page6(tk.Frame):
   def __init__(self, parent, controller):
