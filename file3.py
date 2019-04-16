@@ -11,7 +11,7 @@ import tkinter as tk  # makes dashboard/buttons/interactivity
 from tkinter import ttk
 
 
-class GradeMeApp(tk.Tk):  # Controller class, right out of tutorial
+class GradeMeApp(tk.Tk):  # Controller class
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)  # initializes the application
         # tk.Tk.iconbitmap(self,default="clienticon.ico")
