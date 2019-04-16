@@ -79,7 +79,7 @@ class Exam1(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
-      label = tk.Label(self, text=weightname[0])
+      label = tk.Label(self, text=weightnames[0])
       label.pack(pady=10,padx=10)
       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Overall_Grade))
       button1.pack()
@@ -106,7 +106,7 @@ class Exam2(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
-      label = tk.Label(self, text=weightname[1])
+      label = tk.Label(self, text=weightnames[1])
       label.pack(pady=10,padx=10)
       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Exam1))
       button1.pack()
@@ -126,7 +126,7 @@ class Quizes(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
-      label = tk.Label(self, text=weightname[2])
+      label = tk.Label(self, text=weightnames[2])
       label.pack(pady=10,padx=10)
       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Exam2))
       button1.pack()
@@ -140,7 +140,7 @@ class Homework(tk.Frame):
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        global weightnames
-       label = tk.Label(self, text=weightname[3])
+       label = tk.Label(self, text=weightnames[3])
        label.pack(pady=10, padx=10)
        button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Quizes))
        button1.pack()
@@ -154,7 +154,7 @@ class Final(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
-      label = tk.Label(self, text=weightname[4])
+      label = tk.Label(self, text=weightnames[4])
       label.pack(pady=10,padx=10)
       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Homework))
       button1.pack()
@@ -165,7 +165,7 @@ class Button7(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
-      label = tk.Label(self, text=weightname[5])
+      label = tk.Label(self, text=weightnames[5])
       label.pack(pady=10,padx=10)
       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Homework))
       button1.pack()
