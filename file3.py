@@ -71,12 +71,13 @@ class Page1(tk.Frame):
         button2.pack()
         # CREATING THE ACTUAL PIE CHART
         f = pie_chart()
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
+        g = histogram(grades)
+        canvas2=FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
 
 class Page2(tk.Frame):
@@ -91,20 +92,14 @@ class Page2(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page3))
         button3.pack()
-        f = whisker_plot()
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.draw()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH)
-        h = pie_chart()
-        can = FigureCanvasTkAgg(h, self)
-        can.draw()
-        can.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
-        # toolbar = NavigationToolbar2TkAgg(canvas, self)
-        # toolbar.update()
-        can._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH)
+        f = histogram(grade1)
+        canvas1 = FigureCanvasTkAgg(f, self)
+        canvas1.draw()
+        canvas1.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
+        g = pie_chart()
+        canvas2 = FigureCanvasTkAgg(g, self)
+        canvas2.draw()
+        canvas2.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
 
 
 class Page3(tk.Frame):
