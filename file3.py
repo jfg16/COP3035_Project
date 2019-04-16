@@ -233,12 +233,11 @@ def whisker_plot():
   graph.boxplot(grades)
   return f
 
-def histogram():
-  global grades
+def histogram(n):
   number_bins = 10
   f = Figure(figsize=(5,5), dpi=100)
   graph = f.add_subplot(111)
-  graph.hist(grades,number_bins,facecolor='yellow',alpha=0.5)
+  graph.hist(n,number_bins,facecolor='yellow',alpha=0.5)
   return f
 
 ############################################
