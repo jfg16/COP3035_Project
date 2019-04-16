@@ -52,6 +52,8 @@ class HomePage(tk.Frame):
       button5.pack()
       button6 = ttk.Button(self, text="See "+weightnames[4], command=lambda: controller.show_frame(Final))
       button6.pack()
+      button7 = ttk.Button(self, text="See ", command=lambda: controller.show_frame(Final))
+      button7.pack()
 
 class Overall_Grade(tk.Frame):
   def __init__(self, parent, controller):
@@ -153,6 +155,18 @@ class Final(tk.Frame):
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
+      
+class Button7(tk.Frame):
+  def __init__(self, parent, controller):
+      tk.Frame.__init__(self, parent)
+      label = tk.Label(self, text="7th section")
+      label.pack(pady=10,padx=10)
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Homework))
+      button1.pack()
+      button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
+      button2.pack()
+      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Final))
+      button3.pack()
 
 
 #calculates final grade given a list of grades for one student
