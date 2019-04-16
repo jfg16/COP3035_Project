@@ -114,7 +114,7 @@ class Page3(tk.Frame):
       button2.pack()
       button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
       button3.pack()
-      f = histogram()
+      f = histogram(grade2)
       canvas = FigureCanvasTkAgg(f, self)
       canvas.draw()
       canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -133,7 +133,15 @@ class Page4(tk.Frame):
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
       button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page5))
-      button3.pack()
+      button3.pack
+      
+      f = histogram(grade3)
+      canvas = FigureCanvasTkAgg(f, self)
+      canvas.draw()
+      canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+      #toolbar = NavigationToolbar2TkAgg(canvas, self)
+      #toolbar.update()
+      canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 class Page5(tk.Frame):
@@ -148,6 +156,14 @@ class Page5(tk.Frame):
        button2.pack()
        button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page6))
        button3.pack()
+      
+      f = histogram(grade4)
+       canvas = FigureCanvasTkAgg(f, self)
+       canvas.draw()
+       canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+       #toolbar = NavigationToolbar2TkAgg(canvas, self)
+       #toolbar.update()
+       canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 class Page6(tk.Frame):
@@ -163,6 +179,14 @@ class Page6(tk.Frame):
       button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
       button3.pack()
       
+      f = histogram(grade5)
+      canvas = FigureCanvasTkAgg(f, self)
+      canvas.draw()
+      canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+      #toolbar = NavigationToolbar2TkAgg(canvas, self)
+      #toolbar.update()
+      canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+      
 class Page7(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
@@ -173,6 +197,14 @@ class Page7(tk.Frame):
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
+      
+      f = histogram(grade6)
+      canvas = FigureCanvasTkAgg(f, self)
+      canvas.draw()
+      canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+      #toolbar = NavigationToolbar2TkAgg(canvas, self)
+      #toolbar.update()
+      canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 #calculates final grade given a list of grades for one student
