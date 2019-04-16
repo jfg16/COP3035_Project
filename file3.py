@@ -268,7 +268,7 @@ for names in matrix[4]:    #any number of weights is allowed
       break
   weightnames.append(names)
 
-print(weightnames)
+#print(weightnames)
 #
 
 #store percentages into weights
