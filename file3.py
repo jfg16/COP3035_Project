@@ -20,7 +20,7 @@ class GradeMeApp(tk.Tk): #Controller class, right out of tutorial
       container.grid_rowconfigure(0, weight=1)
       container.grid_columnconfigure(0, weight=1)
       self.frames={}
-      for page in (HomePage, Overall_Grade, Exam1, Exam2, Quizes, Homework, Final):
+      for page in (HomePage, Page1, Page2, Page3, Page4, Page5, Page6, Page7):
           frame = page(container, self)
           self.frames[page] = frame
           frame.grid(row=0, column=0, sticky="nsew")
@@ -40,22 +40,22 @@ class HomePage(tk.Frame):
       label = tk.Label(self, text=student_name+"'s Home Page")
       label.pack(pady=10,padx=10)
       ###
-      button = ttk.Button(self, text="See Overall Grade", command=lambda: controller.show_frame(Overall_Grade))
+      button = ttk.Button(self, text="See Overall Grade", command=lambda: controller.show_frame(Page1))
       button.pack()
-      button2 = ttk.Button(self, text="See "+weightnames[0], command=lambda: controller.show_frame(Exam1))
+      button2 = ttk.Button(self, text="See "+weightnames[0], command=lambda: controller.show_frame(Page2))
       button2.pack()
-      button3 = ttk.Button(self, text="See "+weightnames[1], command=lambda: controller.show_frame(Exam2))
+      button3 = ttk.Button(self, text="See "+weightnames[1], command=lambda: controller.show_frame(Page3))
       button3.pack()
-      button4 = ttk.Button(self, text="See "+weightnames[2], command=lambda: controller.show_frame(Quizes))
+      button4 = ttk.Button(self, text="See "+weightnames[2], command=lambda: controller.show_frame(Page4))
       button4.pack()
-      button5 = ttk.Button(self, text="See "+weightnames[3], command=lambda: controller.show_frame(Homework))
+      button5 = ttk.Button(self, text="See "+weightnames[3], command=lambda: controller.show_frame(Page5))
       button5.pack()
-      button6 = ttk.Button(self, text="See "+weightnames[4], command=lambda: controller.show_frame(Final))
+      button6 = ttk.Button(self, text="See "+weightnames[4], command=lambda: controller.show_frame(Page6))
       button6.pack()
-      button7 = ttk.Button(self, text="See "+weightnames[5], command=lambda: controller.show_frame(Final))
+      button7 = ttk.Button(self, text="See "+weightnames[5], command=lambda: controller.show_frame(Page7))
       button7.pack()
 
-class Overall_Grade(tk.Frame):
+class Page1(tk.Frame):
   def __init__(self, parent, controller):
       ##
       tk.Frame.__init__(self, parent)
@@ -64,7 +64,7 @@ class Overall_Grade(tk.Frame):
       ##
       button1 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button1.pack()
-      button2 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Exam1))
+      button2 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page2))
       button2.pack()
       #CREATING THE ACTUAL PIE CHART
       f = pie_chart()
@@ -75,17 +75,17 @@ class Overall_Grade(tk.Frame):
       #toolbar.update()
       canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-class Exam1(tk.Frame):
+class Page2(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
       label = tk.Label(self, text=weightnames[0])
       label.pack(pady=10,padx=10)
-      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Overall_Grade))
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page1))
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
-      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Exam2))
+      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page3))
       button3.pack()
       f = whisker_plot()
       canvas = FigureCanvasTkAgg(f, self)
@@ -102,17 +102,17 @@ class Exam1(tk.Frame):
       # toolbar.update()
       can._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH)
 
-class Exam2(tk.Frame):
+class Page3(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
       label = tk.Label(self, text=weightnames[1])
       label.pack(pady=10,padx=10)
-      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Exam1))
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page2))
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
-      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Quizes))
+      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
       button3.pack()
       f = histogram()
       canvas = FigureCanvasTkAgg(f, self)
@@ -122,57 +122,57 @@ class Exam2(tk.Frame):
       #toolbar.update()
       canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-class Quizes(tk.Frame):
+class Page4(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
       label = tk.Label(self, text=weightnames[2])
       label.pack(pady=10,padx=10)
-      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Exam2))
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page3))
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
-      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Homework))
+      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page5))
       button3.pack()
 
 
-class Homework(tk.Frame):
+class Page5(tk.Frame):
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        global weightnames
        label = tk.Label(self, text=weightnames[3])
        label.pack(pady=10, padx=10)
-       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Quizes))
+       button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page4))
        button1.pack()
        button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
        button2.pack()
-       button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Final))
+       button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page6))
        button3.pack()
 
 
-class Final(tk.Frame):
+class Page6(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
       label = tk.Label(self, text=weightnames[4])
       label.pack(pady=10,padx=10)
-      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Homework))
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page5))
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
+      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
+      button3.pack()
       
-class Button7(tk.Frame):
+class Page7(tk.Frame):
   def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
       global weightnames
       label = tk.Label(self, text=weightnames[5])
       label.pack(pady=10,padx=10)
-      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Homework))
+      button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page6))
       button1.pack()
       button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
       button2.pack()
-      button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Final))
-      button3.pack()
 
 
 #calculates final grade given a list of grades for one student
