@@ -182,7 +182,7 @@ class Page6(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
         button3.pack()
 
-f = histogram(grades5)
+        f = histogram(grades5)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
         canvas1.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH)
@@ -266,12 +266,11 @@ def pie_chart():  # Function that creates a pie chart
     return f
 
 
-def whisker_plot():
+def whisker_plot(n):
     # fig = plt.figure(1, figsize=(9, 6))
-    global grades
     f = Figure(figsize=(5, 5), dpi=100)
     graph = f.add_subplot(111)
-    graph.boxplot(grades)
+    graph.boxplot(n)
     return f
 
 
