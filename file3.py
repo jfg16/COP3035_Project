@@ -92,7 +92,7 @@ class Page2(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page3))
         button3.pack()
-        f = histogram(grade1)
+        f = histogram(grades1)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
         canvas1.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH)
@@ -114,7 +114,7 @@ class Page3(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
         button3.pack()
-        f = histogram(grade2)
+        f = histogram(grades2)
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -136,7 +136,7 @@ class Page4(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page5))
         button3.pack()
 
-        f = histogram(grade3)
+        f = histogram(grades3)
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -158,7 +158,7 @@ class Page5(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page6))
         button3.pack()
 
-        f = histogram(grade4)
+        f = histogram(grades4)
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -180,7 +180,7 @@ class Page6(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
         button3.pack()
 
-        f = histogram(grade5)
+        f = histogram(grades5)
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -200,7 +200,7 @@ class Page7(tk.Frame):
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button2.pack()
 
-        f = histogram(grade6)
+        f = histogram(grades6)
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
@@ -334,28 +334,39 @@ for i in range(len(matrix[6])):
     grade1.append(matrix[7][i])
 
 grade2 = []
-
 for i in range(len(matrix[6])):
     grade2.append(matrix[8][i])
 
 grade3 = []
-
 for i in range(len(matrix[6])):
     grade3.append(matrix[9][i])
 
 grade4 = []
-
 for i in range(len(matrix[6])):
     grade4.append(matrix[10][i])
-grade5 = []
 
+grade5 = []
 for i in range(len(matrix[6])):
     grade5.append(matrix[11][i])
 
 grade6 = []
-
 for i in range(len(matrix[6])):
     grade6.append(matrix[12][i])
+
+grades1 = list(map(int,grade1))
+grades2 = list(map(int,grade2))
+grades3 = list(map(int,grade3))
+grades4 = list(map(int,grade4))
+grades5 = list(map(int,grade5))
+grades6 = list(map(int,grade6))
+
+
+grades1.sort()
+grades2.sort()
+grades3.sort()
+grades4.sort()
+grades5.sort()
+grades6.sort()
 
 # finds final grade for logged in student
 selected_grade = calculate_final_grade(student_grades, weights)  # final grade for the selected student
