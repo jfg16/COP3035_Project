@@ -39,8 +39,8 @@ class HomePage(tk.Frame):
         ###
         # Creating kinda like the window
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text=student_name + "'s Home Page")
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=student_name + "'s Home Page", font=12)
+        title.pack(padx=10, pady=50)
         ###
         button1 = ttk.Button(self, text="See Overall Grade", command=lambda: controller.show_frame(Page1))
         button1.pack()
@@ -62,8 +62,8 @@ class Page1(tk.Frame):
     def __init__(self, parent, controller):
         ##
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Overall Grade")
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text="Overall Grade", font=12)
+        title.pack(padx=10, pady=10)
         ##
         button1 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button1.pack()
@@ -88,8 +88,8 @@ class Page2(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[0])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[0], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page1))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -114,8 +114,8 @@ class Page3(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[1])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[1], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page2))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -140,8 +140,8 @@ class Page4(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[2])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[2], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page3))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -165,8 +165,8 @@ class Page5(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[3])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[3], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page4))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -191,8 +191,8 @@ class Page6(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[4])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[4], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page5))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -216,8 +216,8 @@ class Page7(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         global weightnames
-        label = tk.Label(self, text=weightnames[5])
-        label.pack(pady=10, padx=10)
+        label = tk.Label(self, text=weightnames[5], font=12)
+        title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page6))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
