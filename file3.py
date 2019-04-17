@@ -34,27 +34,24 @@ class GradeMeApp(tk.Tk):  # Controller class
 
 class HomePage(tk.Frame):
     def __init__(self, parent, controller):
-        global student_name
-        global weightnames
-        ###
         # Creating kinda like the window
         tk.Frame.__init__(self, parent)
-        title = tk.Label(self, text=student_name + "'s Home Page", font=('times', 15))
+        title = tk.Label(self, text=student_name + "'s Home Page"+"\n\nCourse: "+course_code+"\nSemester: "+semester+"\nStudent ID: "+ID, font=('times', 20))
         title.pack(padx=10, pady=10)
         ###
-        button1 = ttk.Button(self, text="See Overall Grade", command=lambda: controller.show_frame(Page1))
+        button1 = ttk.Button(self, text="View Overall Grade", command=lambda: controller.show_frame(Page1))
         button1.pack()
-        button2 = ttk.Button(self, text="See " + weightnames[0], command=lambda: controller.show_frame(Page2))
+        button2 = ttk.Button(self, text="View \"" + weightnames[0]+"\"", command=lambda: controller.show_frame(Page2))
         button2.pack()
-        button3 = ttk.Button(self, text="See " + weightnames[1], command=lambda: controller.show_frame(Page3))
+        button3 = ttk.Button(self, text="View \"" + weightnames[1]+"\"", command=lambda: controller.show_frame(Page3))
         button3.pack()
-        button4 = ttk.Button(self, text="See " + weightnames[2], command=lambda: controller.show_frame(Page4))
+        button4 = ttk.Button(self, text="View \"" + weightnames[2]+"\"", command=lambda: controller.show_frame(Page4))
         button4.pack()
-        button5 = ttk.Button(self, text="See " + weightnames[3], command=lambda: controller.show_frame(Page5))
+        button5 = ttk.Button(self, text="View \"" + weightnames[3]+"\"", command=lambda: controller.show_frame(Page5))
         button5.pack()
-        button6 = ttk.Button(self, text="See " + weightnames[4], command=lambda: controller.show_frame(Page6))
+        button6 = ttk.Button(self, text="View \"" + weightnames[4]+"\"", command=lambda: controller.show_frame(Page6))
         button6.pack()
-        button7 = ttk.Button(self, text="See " + weightnames[5], command=lambda: controller.show_frame(Page7))
+        button7 = ttk.Button(self, text="View \"" + weightnames[5]+"\"", command=lambda: controller.show_frame(Page7))
         button7.pack()
 
 
@@ -62,7 +59,7 @@ class Page1(tk.Frame):
     def __init__(self, parent, controller):
         ##
         tk.Frame.__init__(self, parent)
-        title = tk.Label(self, text="Overall Grade", font=('times', 15))  
+        title = tk.Label(self, text="Overall Grade", font=('times', 20))  
         title.pack(padx=10, pady=10)
         ##
         button1 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -70,7 +67,7 @@ class Page1(tk.Frame):
         button2 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page2))
         button2.pack()
         
-        text1 = tk.Label(self, text="Your final overall grade: "+str(selected_grade)+"%",font =('times', 10)) 
+        text1 = tk.Label(self, text="Your final overall grade: "+str(selected_grade)+"%",font =('times', 15)) 
         text1.place(x=5,y=65)  #makes label that tells you grade.This is done for every class page.
         
         # CREATING THE ACTUAL PIE CHART
@@ -87,8 +84,7 @@ class Page1(tk.Frame):
 class Page2(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[0], font=('times', 15))
+        title = tk.Label(self, text=weightnames[0], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page1))
         button1.pack()
@@ -97,7 +93,7 @@ class Page2(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page3))
         button3.pack()
         
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[0])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[0])+"%",font =('times', 15))
         text1.place(x=5,y=65)
         
         f = histogram(grades1)
@@ -113,8 +109,7 @@ class Page2(tk.Frame):
 class Page3(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[1], font=('times', 15))
+        title = tk.Label(self, text=weightnames[1], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page2))
         button1.pack()
@@ -123,7 +118,7 @@ class Page3(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
         button3.pack()
         
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[1])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[1])+"%",font =('times', 15))
         text1.place(x=5,y=65)
         
         f = histogram(grades2)
@@ -139,8 +134,7 @@ class Page3(tk.Frame):
 class Page4(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[2], font=('times', 15))
+        title = tk.Label(self, text=weightnames[2], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page3))
         button1.pack()
@@ -149,7 +143,7 @@ class Page4(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page5))
         button3.pack()
         
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[2])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[2])+"%",font =('times', 15))
         text1.place(x=5,y=65)
 
         f = histogram(grades3)
@@ -164,8 +158,7 @@ class Page4(tk.Frame):
 class Page5(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[3], font=('times', 15))
+        title = tk.Label(self, text=weightnames[3], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page4))
         button1.pack()
@@ -174,7 +167,7 @@ class Page5(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page6))
         button3.pack()
         
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[3])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[3])+"%",font =('times', 15))
         text1.place(x=5,y=65)
 
         f = histogram(grades4)
@@ -190,8 +183,7 @@ class Page5(tk.Frame):
 class Page6(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[4], font=('times', 15))
+        title = tk.Label(self, text=weightnames[4], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page5))
         button1.pack()
@@ -200,7 +192,7 @@ class Page6(tk.Frame):
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
         button3.pack
         
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[4])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[4])+"%",font =('times', 15))
         text1.place(x=5,y=65)
 
         f = histogram(grades5)
@@ -215,15 +207,14 @@ class Page6(tk.Frame):
 class Page7(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global weightnames
-        title = tk.Label(self, text=weightnames[5], font=('times', 15))
+        title = tk.Label(self, text=weightnames[5], font=('times', 20))
         title.pack(padx=10, pady=10)
         button1 = ttk.Button(self, text="Previous Section", command=lambda: controller.show_frame(Page6))
         button1.pack()
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button2.pack()
 
-        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[5])+"%",font =('times', 10))
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[5])+"%",font =('times', 15))
         text1.place(x=5,y=65)
         
         f = histogram(grades6)
@@ -281,7 +272,7 @@ def pie_chart():  # Function that creates a pie chart
     global letter_count
     test = ['A', 'B', 'C', 'D', 'F']
     labels = list(test)
-    colors = ['gold', 'yellowgreen', 'pink', 'lightskyblue', 'red']
+    colors = ['darkred', 'goldenrod', 'darkseagreen', 'lightskyblue', 'dimgrey']
     f = Figure(figsize=(5, 5), dpi=100)
     graph = f.add_subplot(111)
     graph.pie(letter_count, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
@@ -302,7 +293,7 @@ def histogram(n):
     number_bins = 10
     f = Figure(figsize=(5, 5), dpi=100)
     graph = f.add_subplot(111)
-    graph.hist(n, number_bins, facecolor='gold', alpha=0.5)
+    graph.hist(n, number_bins, facecolor='burlywood', alpha=0.5)
     return f
 
 
