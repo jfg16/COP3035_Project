@@ -62,7 +62,7 @@ class Page1(tk.Frame):
     def __init__(self, parent, controller):
         ##
         tk.Frame.__init__(self, parent)
-        title = tk.Label(self, text="Overall Grade", font=12)
+        title = tk.Label(self, text="Overall Grade", font=12)  
         title.pack(padx=10, pady=10)
         ##
         button1 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
@@ -70,8 +70,8 @@ class Page1(tk.Frame):
         button2 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page2))
         button2.pack()
         
-        text1 = tk.Label(self, text="Your final overall grade: "+str(selected_grade)+"%",font =8)
-        text1.place(x=5,y=65)
+        text1 = tk.Label(self, text="Your final overall grade: "+str(selected_grade)+"%",font =8) 
+        text1.place(x=5,y=65)  #makes label that tells you grade.This is done for every class page.
         
         # CREATING THE ACTUAL PIE CHART
         f = pie_chart()
@@ -289,7 +289,7 @@ def pie_chart():  # Function that creates a pie chart
     # graph.show()
     return f
 
-
+#function changed to take in parameters (takes in arg)
 def whisker_plot(n):
     # fig = plt.figure(1, figsize=(9, 6))
     f = Figure(figsize=(5, 5), dpi=100)
@@ -297,12 +297,12 @@ def whisker_plot(n):
     graph.boxplot(n)
     return f
 
-
+##function changed to take in parameters
 def histogram(n):
     number_bins = 10
     f = Figure(figsize=(5, 5), dpi=100)
     graph = f.add_subplot(111)
-    graph.hist(n, number_bins, facecolor='yellow', alpha=0.5)
+    graph.hist(n, number_bins, facecolor='gold', alpha=0.5)
     return f
 
 
@@ -354,7 +354,9 @@ for student in matrix[6]:
 student_grades = []  # ONLY GRADES for the logged in student
 for i in range(7, len(weights) + 7):
     student_grades.append(int(matrix[i][j]))
-
+    
+    
+# this makes a list of each type of grades
 grade1 = []
 for i in range(len(matrix[6])):
     grade1.append(matrix[7][i])
@@ -378,6 +380,8 @@ for i in range(len(matrix[6])):
 grade6 = []
 for i in range(len(matrix[6])):
     grade6.append(matrix[12][i])
+    
+ #changed variable name to grades and converted characters to ints
 
 grades1 = list(map(int,grade1))
 grades2 = list(map(int,grade2))
@@ -386,7 +390,7 @@ grades4 = list(map(int,grade4))
 grades5 = list(map(int,grade5))
 grades6 = list(map(int,grade6))
 
-
+#ascending 
 grades1.sort()
 grades2.sort()
 grades3.sort()
