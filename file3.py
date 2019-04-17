@@ -69,6 +69,10 @@ class Page1(tk.Frame):
         button1.pack()
         button2 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page2))
         button2.pack()
+        
+        text1 = tk.Label(self, text="Your final overall grade: "+str(selected_grade)+"%",font = '35')
+        text1.place(x=5,y=65)
+        
         # CREATING THE ACTUAL PIE CHART
         f = pie_chart()
         canvas1 = FigureCanvasTkAgg(f, self)
@@ -92,6 +96,10 @@ class Page2(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page3))
         button3.pack()
+        
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[0])+"%",font = '35')
+        text1.place(x=5,y=65)
+        
         f = histogram(grades1)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
@@ -114,6 +122,10 @@ class Page3(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page4))
         button3.pack()
+        
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[1])+"%",font = '35')
+        text1.place(x=5,y=65)
+        
         f = histogram(grades2)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
@@ -136,6 +148,9 @@ class Page4(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page5))
         button3.pack()
+        
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[2])+"%",font = '35')
+        text1.place(x=5,y=65)
 
         f = histogram(grades3)
         canvas1 = FigureCanvasTkAgg(f, self)
@@ -158,6 +173,9 @@ class Page5(tk.Frame):
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page6))
         button3.pack()
+        
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[3])+"%",font = '35')
+        text1.place(x=5,y=65)
 
         f = histogram(grades4)
         canvas1 = FigureCanvasTkAgg(f, self)
@@ -180,7 +198,10 @@ class Page6(tk.Frame):
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
-        button3.pack()
+        button3.pack
+        
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[4])+"%",font = '35')
+        text1.place(x=5,y=65)
 
         f = histogram(grades5)
         canvas1 = FigureCanvasTkAgg(f, self)
@@ -202,6 +223,9 @@ class Page7(tk.Frame):
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button2.pack()
 
+        text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[5])+"%",font = '35')
+        text1.place(x=5,y=65)
+        
         f = histogram(grades6)
         canvas1 = FigureCanvasTkAgg(f, self)
         canvas1.draw()
