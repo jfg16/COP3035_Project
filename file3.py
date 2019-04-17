@@ -39,7 +39,7 @@ class HomePage(tk.Frame):
         ###
         # Creating kinda like the window
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text=student_name + "'s Home Page", font=12)
+        title = tk.Label(self, text=student_name + "'s Home Page", font=12)
         title.pack(padx=10, pady=50)
         ###
         button1 = ttk.Button(self, text="See Overall Grade", command=lambda: controller.show_frame(Page1))
