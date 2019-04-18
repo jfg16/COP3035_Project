@@ -190,7 +190,7 @@ class Page6(tk.Frame):
         button2 = ttk.Button(self, text="Home", command=lambda: controller.show_frame(HomePage))
         button2.pack()
         button3 = ttk.Button(self, text="Next Section", command=lambda: controller.show_frame(Page7))
-        button3.pack
+        button3.pack()
         
         text1 = tk.Label(self, text="Your grade on this assignment: "+str(student_grades[4])+"%",font =('times', 15))
         text1.place(x=5,y=65)
